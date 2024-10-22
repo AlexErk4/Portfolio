@@ -223,3 +223,11 @@ The **Churn Reason Page** provides a detailed breakdown of the reasons behind cu
 ## Power BI Dashboard
 
 ![Dashboard Screenshot](https://github.com/AlexErk4/Portfolio/blob/main/Screenshot%202024-10-22%20212707.png?raw=true)
+
+
+
+
+## Conclusion
+
+This project provided a comprehensive analysis of customer churn using SQL Server for ETL and Power BI for data visualization. Through the dashboard, we identified key metrics such as churn rate, customer demographics, and service usage, enabling actionable insights for decision-makers. Additionally, a machine learning model was developed to predict future churners, offering a proactive approach to customer retention. Overall, this project demonstrates the importance of data-driven strategies in improving customer satisfaction and loyalty while reducing churn.
+

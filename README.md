@@ -220,3 +220,6 @@ The **Churn Reason Page** provides a detailed breakdown of the reasons behind cu
 - **Churn Reasons**: A bar chart showing the various reasons customers have given for churning (e.g., high prices, poor customer service, competitor offering, etc.).
 - **Churn Counts**: The total count of customers who have cited each reason for leaving, offering insight into the most common pain points that lead to churn.
 
+## Power BI Dashboard
+
+![Dashboard Screenshot](https://github.com/AlexErk4/Portfolio/blob/main/Screenshot%202024-10-22%20212707.png?raw=true)

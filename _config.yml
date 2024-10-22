@@ -1,0 +1,40 @@
+# Site settings
+title: "Your Site Title"  # Title of your website
+description: "A short description of your website."  # A short description for SEO
+url: "http://your-website.com"  # The base URL of your website (without the trailing slash)
+baseurl: ""  # If your site is hosted in a subdirectory, add it here (e.g., "/blog")
+author: "Your Name"  # Author of the website
+
+# Optional social links
+social:
+  github: "https://github.com/username"
+  twitter: "https://twitter.com/username"
+  linkedin: "https://www.linkedin.com/in/username"
+
+# Build settings
+markdown: kramdown  # Markdown engine
+highlighter: rouge  # Syntax highlighter for code blocks
+theme: minima  # Jekyll theme (use the name of the theme)
+plugins:
+  - jekyll-feed  # Plugin for RSS feed generation
+  - jekyll-sitemap  # Plugin to generate sitemap
+  - jekyll-seo-tag  # Plugin for better SEO
+  - jekyll-paginate  # Plugin for pagination (if needed)
+
+# Pagination settings
+paginate: 5  # Number of posts per page for pagination
+paginate_path: "/page:num/"  # URL structure for pagination
+
+# Exclude files/folders from the build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+
+# Include specific files in the build (optional)
+include:
+  - _pages
+
+# SEO and Analytics
+google_analytics: "UA-XXXX-Y"  # Google Analytics tracking ID

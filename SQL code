@@ -8,6 +8,7 @@ FROM Customer_Data
 GROUP BY Gender;
 
 2. Check Distribution by Contract:
+'''sql 
 SELECT Contract, COUNT(Contract) AS TotalCount,
 COUNT(Contract)*100.0 / (SELECT COUNT(*) FROM Customer_Data) AS Percentage
 FROM Customer_Data

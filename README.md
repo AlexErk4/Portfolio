@@ -25,7 +25,6 @@ This analysis benefits businesses from any industry seeking to reduce customer c
 
 3. Project Target
 Goals:
-
 Build an ETL (Extract, Transform, Load) process in SQL Server to manage and process customer data.
 Create a Power BI dashboard to visualize demographic, geographic, and customer account data.
 Identify patterns in customer churn and suggest actionable insights.
@@ -35,6 +34,7 @@ Metrics to Track:
 Total Customers
 Total Churn & Churn Rate
 New Joiners
+
 4. ETL Process in SQL Server
 Data Loading:
 The first step was to load the customer data into SQL Server using a CSV file. This data was imported into a staging table, Customer_Data, using the Import Wizard in SQL Server Management Studio (SSMS).

@@ -44,8 +44,6 @@ Before analyzing the data, it’s essential to understand its structure, charact
 
 1. Check Distribution by Gender:
 
-sql
-Copy code
 SELECT Gender, COUNT(Gender) AS TotalCount,
 COUNT(Gender)*100.0 / (SELECT COUNT(*) FROM Customer_Data) AS Percentage
 FROM Customer_Data
@@ -58,34 +56,30 @@ SELECT Contract, COUNT(Contract) AS TotalCount,
 COUNT(Contract)*100.0 / (SELECT COUNT(*) FROM Customer_Data) AS Percentage
 FROM Customer_Data
 GROUP BY Contract;
+
 3. Check Customer Status & Revenue Distribution:
 
-sql
-Copy code
 SELECT Customer_Status, COUNT(Customer_Status) AS TotalCount, SUM(Total_Revenue) AS TotalRev,
 SUM(Total_Revenue) / (SELECT SUM(Total_Revenue) FROM Customer_Data) * 100 AS RevPercentage
 FROM Customer_Data
 GROUP BY Customer_Status;
+
 4. Check Distribution by State:
 
-sql
-Copy code
 SELECT State, COUNT(State) AS TotalCount,
 COUNT(State)*100.0 / (SELECT COUNT(*) FROM Customer_Data) AS Percentage
 FROM Customer_Data
 GROUP BY State
 ORDER BY Percentage DESC;
+
 5. Identify Unique Internet Types:
 
-sql
-Copy code
 SELECT DISTINCT Internet_Type
 FROM Customer_Data;
+
 Null Value Exploration:
 Identifying and handling missing or null values is crucial for maintaining data integrity. The following query helps in checking for null values across different columns:
 
-sql
-Copy code
 SELECT 
     SUM(CASE WHEN Customer_ID IS NULL THEN 1 ELSE 0 END) AS Customer_ID_Null_Count,
     SUM(CASE WHEN Gender IS NULL THEN 1 ELSE 0 END) AS Gender_Null_Count,
@@ -93,11 +87,11 @@ SELECT
     SUM(CASE WHEN Married IS NULL THEN 1 ELSE 0 END) AS Married_Null_Count,
     -- Other columns here...
 FROM Customer_Data;
+
+
 Data Cleaning & Transformation:
 To prepare the data for analysis, null values were replaced, and data was cleaned. The following SQL query was used to insert clean data into the production table:
 
-sql
-Copy code
 SELECT 
     Customer_ID,
     Gender,
@@ -138,14 +132,10 @@ Two views were created for further analysis in Power BI:
 
 View for Churned & Stayed Customers:
 
-sql
-Copy code
 CREATE VIEW vw_ChurnData AS
 SELECT * FROM prod_Churn WHERE Customer_Status IN ('Churned', 'Stayed');
 View for New Joiners:
 
-sql
-Copy code
 CREATE VIEW vw_JoinData AS
 SELECT * FROM prod_Churn WHERE Customer_Status = 'Joined';
 5. Power BI Transformation
@@ -171,25 +161,17 @@ Service columns were unpivoted to simplify analysis of service usage across diff
 Power BI measures were created to track key metrics:
 
 Total Customers:
-
-sql
-Copy code
 Total Customers = COUNT(prod_Churn[Customer_ID]);
+
 New Joiners:
-
-sql
-Copy code
 New Joiners = CALCULATE(COUNT(prod_Churn[Customer_ID]), prod_Churn[Customer_Status] = "Joined");
+
 Total Churn:
-
-sql
-Copy code
 Total Churn = SUM(prod_Churn[Churn Status]);
-Churn Rate:
 
-sql
-Copy code
+Churn Rate:
 Churn Rate = [Total Churn] / [Total Customers];
+
 7. Power BI Visualization
 A comprehensive Power BI dashboard was created to provide a detailed view of customer churn.
 
